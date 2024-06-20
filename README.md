@@ -31,7 +31,9 @@ A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` p
 Basta abrir o promt de comando de seu computador e digitar pip install (nome da biblioteca) - **sem parenteses**
 Lembremos que para importar uma biblioteca é necessário utilizar o comando `pip install + nomes de bibliotecas´.
 
-Em seguida para importa-las, é necessário utilizar o comando `import + nomes de bibliotecas`. logo no início de seu projeto.
+Em seguida para importá-las, é necessário utilizar o comando `import + nomes de bibliotecas`. logo no início de seu projeto.
+
+import scipy
 
 #### Declarar as variáveis como símbolos*
 
@@ -54,4 +56,9 @@ Em seguida para importa-las, é necessário utilizar o comando `import + nomes d
 `print(solução[m2])`
 
 `print(solução[m3])` 
+
+você retornará todas variáveis do problema
+
+
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/880ea6c1-6b65-42cf-a2ef-b76355572e5b)
 
