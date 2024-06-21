@@ -40,25 +40,25 @@ import scipy
 
 #### Declarar as variáveis como símbolos*
 
-`m1, m2, m3 = sympy.symbols('m1 m2 m3')`
+        m1, m2, m3 = sympy.symbols('m1 m2 m3')
 
 #### Definindo as equações 
 
-`eq1 = 0.9*m1 + 0.3*m2 + 0.1*m3 - 30`
+        eq1 = 0.9*m1 + 0.3*m2 + 0.1*m3 - 30
 
-`eq2 = 0.1*m1 + 0.5*m2 + 0.2*m3 - 25`
+        eq2 = 0.1*m1 + 0.5*m2 + 0.2*m3 - 25
 
-`eq3 = 0.2*m2 + 0.7*m3 - 10`
+        eq3 = 0.2*m2 + 0.7*m3 - 10
 
 #### Resolvendo o sistema
-`solução = sympy.solve([eq1,eq2,eq3],[m1,m2,m3])`
+          solução = sympy.solve([eq1,eq2,eq3],[m1,m2,m3])
 
-#### Imprimindo (ou retornando) os resultados
-`print(solução[m1])`
+  #### Imprimindo (ou retornando) os resultados
+          print(solução[m1])
 
-`print(solução[m2])`
+          print(solução[m2])
 
-`print(solução[m3])` 
+          print(solução[m3])
 
 você retornará todas variáveis do problema
 
@@ -134,4 +134,17 @@ Para propriedades de saturação  a melhor opção de bibliotecas foi a [pyXStea
 
 
 ##  Equações de Estado
-<img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/3db3e471-9f98-4fef-ab12-ec45ba74ba7d))" alt="Image Description" width="400"/>
+
+As equações de estado termodinâmicas são expressões matemáticas que relacionam variáveis termodinâmicas de um sistema, como pressão (P), volume (V), temperatura (T) e quantidade de substância (n). Elas são essenciais para descrever o comportamento dos gases e líquidos em diferentes condições.
+
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/7a9058f3-e3ca-46c4-9177-160410299f34)
+
+**Por ser mais simples de se cálcular, para este exemplo itremos utilizar a equação de Van Der Waals para calcular o Exemplo abaixo**
+
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/f07a6fd5-71b8-43fd-8b49-aa69d09a8a4f)
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/c2666ccd-b067-4cd3-abcb-dbedc75dbd35)
+
+Obs: Pr = P/Pc e Tr = T/Tc
+
+🟢**Solução analítica**
+
