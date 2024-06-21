@@ -27,7 +27,7 @@ $$10 kg/s = 0,0m_{1} + 0,2m_{2} + 0,7m_{3}$$
 
 Temos um sistema de equações que poderíamos muito bem resolver com alguns dos muitos métodos que aprendemos (ou aprenderemos) ao longo do curso. Porém, resolveremos este problema de sistemas de equações lineares em Python maneira analítica.
 
-![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b)
+<img src= "![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b) alt="Image Description" width="20"/>
 
 
   A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` para trabalhar com símbolos
@@ -107,5 +107,7 @@ Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e su
 
 
 <img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/99560f6c-db20-4b16-814d-878ec768ba94" alt="Image Description" width="300"/>
+
+Neste mesmo site, você pode encontrar uma infinidade de bibliotecas open-source! 
 
 ## Equações de Estado
