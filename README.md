@@ -30,9 +30,9 @@ Temos um sistema de equações que poderíamos muito bem resolver com alguns dos
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b)
 
 
-A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` para trabalhar com símbolos
-Basta abrir o promt de comando de seu computador e digitar pip install (nome da biblioteca) - **sem parenteses**
-Lembremos que para importar uma biblioteca é necessário utilizar o comando `pip install + nomes de bibliotecas´.
+  A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` para trabalhar com símbolos
+  Basta abrir o promt de comando de seu computador e digitar pip install (nome da biblioteca) - **sem parenteses**
+  Lembremos que para importar uma biblioteca é necessário utilizar o comando `pip install + nomes de bibliotecas´.
 
 Em seguida para importá-las, é necessário utilizar o comando `import + nomes de bibliotecas`. logo no início de seu projeto.
 
@@ -66,7 +66,23 @@ você retornará todas variáveis do problema
 
 
 # Introdução às bibliotecas
-## Tabelas de vapor 
+
+## Interpolação & Tbaelas de Vapor
+
+  Interpolação é um método matemático utilizado para estimar valores desconhecidos que se situam entre dois valores conhecidos em uma sequência de dados. No contexto da engenharia termodinâmica, a interpolação é frequentemente utilizada para encontrar propriedades de substâncias como vapor e água a determinadas condições de pressão e temperatura.
+* ####  Método Numérico
+  A equação básica da interpolação linear é:
+  
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/408928d0-e941-49ea-b5ce-a9608810cd67)
+
+Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e substituir na equação acima. Calculadoras Gráficas como a HP Prime, ou a HP 50G possuem esta função de interpolação de forma "nativa" em suas aplicaçõas, mas caso naão tenha uma, basta utilizar este algoritmo.
+
+`Caso tenha interesse, este algoritmo foi desenvolvido com uma interface gráfica de usuário e está disponível neste repositório!`
 
 
-## Equações de estado
+
+
+
+
+
+## Equações de Estado
