@@ -139,7 +139,7 @@ As equações de estado termodinâmicas são expressões matemáticas que relaci
 
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/7a9058f3-e3ca-46c4-9177-160410299f34)
 
-**Por ser mais simples de se cálcular, para este exemplo itremos utilizar a equação de Van Der Waals para calcular o Exemplo abaixo**
+**Por ser mais simples de se cálcular, para este exemplo itremos utilizar a equação de Van Der Waals para calcular o Volume de um gás em uma determinada temperatura**
 
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/f07a6fd5-71b8-43fd-8b49-aa69d09a8a4f)
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/c2666ccd-b067-4cd3-abcb-dbedc75dbd35)
@@ -147,4 +147,37 @@ As equações de estado termodinâmicas são expressões matemáticas que relaci
 Obs: Pr = P/Pc e Tr = T/Tc
 
 🟢**Solução analítica**
+Este cálculo, por se tratar de  uma equação de estado cúbida convém ser solucionado por meio de uma calcualdora gráfica, Excel ou Python!
+
+        import numpy as np
+        from scipy.optimize import fsolve
+        
+        # Funçãoo de Van der Waals
+        def van_der_waals(V, P, n, T, a, b, R=0.0821):
+        return P + a * (n / V)**2 * (V - n * b) - n * R * T / V
+
+        # Funçãoo para resolver a equação de Van der Waals e retornar o volume
+        def solve_van_der_waals(P, n, T, a, b, V_guess=1.0):
+        # Definir a função de resÃ­duo
+        residual_func = lambda V: van_der_waals(V, P, n, T, a, b)
+    
+        # Resolver a equação de Van der Waals para encontrar o volume
+        V_solution = fsolve(residual_func, V_guess)[0]
+    
+        return V_solution
+
+        # Exemplo de uso:
+        P = 10.0  # Pressão específica em atm
+        T = 300.0  # Temperatura em K
+        n = 1.0  # Quantidade de substância em mol
+        a = 1.36  # Constante específica para o gás
+        b = 0.0318  # Constante específica para o gás
+
+        # Resolver a equação de Van der Waals para encontrar o volume
+        V = solve_van_der_waals(P, n, T, a, b)
+        print(f"O volume para Ã©  P = {P} atm: {V:.4f} L")
+
+Fazendo uma nova pesquisa por bibliotecas, é possível encontrar a biblioteca [CoolProp](https://github.com/CoolProp/CoolProp) desenvoldida em C++. Em seu repositório é disponibilizado toda sua [documentação](http://coolprop.org/), onde é possível encontrar diversas dicas de como utilizar 
+
+
 
