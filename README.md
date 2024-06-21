@@ -108,6 +108,30 @@ Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e su
 
 <img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/99560f6c-db20-4b16-814d-878ec768ba94" alt="Image Description" width="300"/>
 
-Neste mesmo site, você pode encontrar uma infinidade de bibliotecas open-source! 
+Neste mesmo site, você pode encontrar uma infinidade de bibliotecas open-source!  Basta clicar na lupa como na imagem abaixo, e digitar o assunto desejado preferenicalmente em inglês.
 
-## Equações de Estado
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/74bbeb34-ccfe-49a8-a9a1-8ad906683c7b)
+
+Como nosso foco é termodinâmica e propriedades de água saturada, podemos simplesmennte buscar por `Thermodynamic properties`
+
+## Propriedades da água
+
+Para propriedades de saturação  a melhor opção de bibliotecas foi a [pyXSteam]([https://github.com/KurtJacobson/XSteam](https://pypi.org/project/pyXSteam/)), cuja documentação, é baseada em dados da [IAPWS](http://iapws.org/), (Associação Internacional de Propriedades de Água e Vapor) logo é utilizada apenas para dados de água, que será nosso foco!
+
+`Para instalar, basta copiar o pip install presente em seu repositório disponível no link`
+
+:red_circle: **Exemplo para determinar o volume da água no estado líquido para 50ºC**
+
+        from pyXSteam.XSteam import XSteam
+        steamTable = XSteam(XSteam.UNIT_SYSTEM_MKS)
+        print(steamTable.vV_t(50))
+
+:red_circle: **Volume em função da pressão e temperatura.**
+
+        from pyXSteam.XSteam import XSteam
+        steamTable = XSteam(XSteam.UNIT_SYSTEM_MKS)
+        print(steamTable.v_pt(20,10))
+
+
+##  Equações de Estado
+<img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/3db3e471-9f98-4fef-ab12-ec45ba74ba7d))" alt="Image Description" width="400"/>
