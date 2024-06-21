@@ -27,6 +27,9 @@ $$10 kg/s = 0,0m_{1} + 0,2m_{2} + 0,7m_{3}$$
 
 Temos um sistema de equações que poderíamos muito bem resolver com alguns dos muitos métodos que aprendemos (ou aprenderemos) ao longo do curso. Porém, resolveremos este problema de sistemas de equações lineares em Python maneira analítica.
 
+![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b)
+
+
 A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` para trabalhar com símbolos
 Basta abrir o promt de comando de seu computador e digitar pip install (nome da biblioteca) - **sem parenteses**
 Lembremos que para importar uma biblioteca é necessário utilizar o comando `pip install + nomes de bibliotecas´.
@@ -59,6 +62,11 @@ import scipy
 
 você retornará todas variáveis do problema
 
-
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/880ea6c1-6b65-42cf-a2ef-b76355572e5b)
 
+
+# Introdução às bibliotecas
+## Tabelas de vapor 
+
+
+## Equações de estado
