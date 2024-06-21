@@ -77,12 +77,35 @@ você retornará todas variáveis do problema
 
 Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e substituir na equação acima. Calculadoras Gráficas como a HP Prime, ou a HP 50G possuem esta função de interpolação de forma "nativa" em suas aplicaçõas, mas caso naão tenha uma, basta utilizar este algoritmo.
 
-`Caso tenha interesse, este algoritmo foi desenvolvido com uma interface gráfica de usuário e está disponível neste repositório!`
+    import numpy as np 
+    def calcular_interp_linear():
+    # Obtém os valores de x e y inseridos pelo usuário
+    
+    x_valores = []
+    
+    y_valores = []
+
+    for i in range(2):
+        x_valor = float(input(f"Digite o valor de x{i + 1}: "))
+        x_valores.append(x_valor)
+
+        y_valor = float(input(f"Digite o valor de y{i + 1}: "))
+        y_valores.append(y_valor)
+
+    # Obtém o valor de x para o qual a interpolação será calculada
+    valor_x = float(input("Digite o valor de x para interpolação: "))
+
+    # Calcula a interpolação linear usando numpy
+    resultado = np.interp(valor_x, x_valores, y_valores)
+
+    # Exibe o resultado
+    print(f"Resultado da interpolação linear: {resultado}")
+
+:yellow_circle:`Caso tenha interesse, este algoritmo foi desenvolvido com uma interface gráfica de usuário e está disponível neste repositório!`
+
+#### Mas onde entram as bibliotecas termodinâmicas? E como encontrá-las?
 
 
-
-
-
-
+<img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/99560f6c-db20-4b16-814d-878ec768ba94" alt="Image Description" width="300"/>
 
 ## Equações de Estado
