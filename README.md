@@ -1,4 +1,4 @@
-# Aplicações de Python na Termodinâmica para Engenharia Química
+# Aplicações de Python no ensino da Termodinâmica para Engenharia Química
 
 ####  ***Maiara de Souza Salmaso***
 
