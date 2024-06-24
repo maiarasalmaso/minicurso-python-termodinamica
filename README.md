@@ -27,8 +27,7 @@ $$10 kg/s = 0,0m_{1} + 0,2m_{2} + 0,7m_{3}$$
 
 Temos um sistema de equações que poderíamos muito bem resolver com alguns dos muitos métodos que aprendemos (ou aprenderemos) ao longo do curso. Porém, resolveremos este problema de sistemas de equações lineares em Python maneira analítica.
 
-<img src= "![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b) alt="Image Description" width="20"/>
-
+<img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/10970fc6-ac53-4080-9bdc-dc3851453c4b" alt="Image Description" width="300"/>
 
   A primeira coisa que faremos é **instalar as bibliotecas** , usaremos `sympy` para trabalhar com símbolos
   Basta abrir o promt de comando de seu computador e digitar pip install (nome da biblioteca) - **sem parenteses**
@@ -69,13 +68,15 @@ você retornará todas variáveis do problema
 
 ## Interpolação & Tbaelas de Vapor
 
-  Interpolação é um método matemático utilizado para estimar valores desconhecidos que se situam entre dois valores conhecidos em uma sequência de dados. No contexto da engenharia termodinâmica, a interpolação é frequentemente utilizada para encontrar propriedades de substâncias como vapor e água a determinadas condições de pressão e temperatura.
+  Interpolação é um método matemático utilizado para estimar valores desconhecidos que se situam entre dois valores conhecidos em uma sequência de dados. No contexto da termodinâmica, a interpolação é frequentemente utilizada para encontrar propriedades de substâncias como vapor e água em determinadas condições de pressão e temperatura.
+  
 * ####  Método Numérico
   A equação básica da interpolação linear é:
   
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/408928d0-e941-49ea-b5ce-a9608810cd67)
 
-Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e substituir na equação acima. Calculadoras Gráficas como a HP Prime, ou a HP 50G possuem esta função de interpolação de forma "nativa" em suas aplicaçõas, mas caso naão tenha uma, basta utilizar este algoritmo.
+Para resolver isso, basta consultar uma tabela, extrair os dados dos pontos x e y e substituí-los na equação acima. Calculadoras gráficas como a HP Prime ou a HP 50G possuem essa função de interpolação de forma nativa em suas aplicações, mas caso não tenha uma, basta utilizar este algoritmo.
+
 
     import numpy as np 
     def calcular_interp_linear():
@@ -108,7 +109,7 @@ Para resolvê-la, basta ir à uma tabela, retirar os dados dos pontos x e y e su
 
 <img src="https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/99560f6c-db20-4b16-814d-878ec768ba94" alt="Image Description" width="300"/>
 
-Neste mesmo site, você pode encontrar uma infinidade de bibliotecas open-source!  Basta clicar na lupa como na imagem abaixo, e digitar o assunto desejado preferenicalmente em inglês.
+Neste mesmo site, você pode encontrar uma infinidade de bibliotecas open-source! Basta clicar na lupa, como na imagem abaixo, e digitar o assunto desejado, preferencialmente em inglês
 
 ![image](https://github.com/maiarasalmaso/minicurso-python-termodinamica/assets/91421583/74bbeb34-ccfe-49a8-a9a1-8ad906683c7b)
 
@@ -116,7 +117,7 @@ Como nosso foco é termodinâmica e propriedades de água saturada, podemos simp
 
 ## Propriedades da água
 
-Para propriedades de saturação  a melhor opção de bibliotecas foi a [pyXSteam]([https://github.com/KurtJacobson/XSteam](https://pypi.org/project/pyXSteam/)), cuja documentação, é baseada em dados da [IAPWS](http://iapws.org/), (Associação Internacional de Propriedades de Água e Vapor) logo é utilizada apenas para dados de água, que será nosso foco!
+Para propriedades de saturação  a melhor opção de bibliotecas foi a [pyXSteam]([https://github.com/KurtJacobson/XSteam](https://pypi.org/project/pyXSteam/)), cuja documentação, é baseada em dados da [IAPWS](http://iapws.org/) (Associação Internacional de Propriedades de Água e Vapor) logo é utilizada apenas para dados de água, que será o nosso foco!
 
 `Para instalar, basta copiar o pip install presente em seu repositório disponível no link`
 
@@ -147,8 +148,8 @@ As equações de estado termodinâmicas são expressões matemáticas que relaci
 Obs: Pr = P/Pc e Tr = T/Tc
 
 🟢**Solução analítica**
-Este cálculo, por se tratar de  uma equação de estado cúbida convém ser solucionado por meio de uma calcualdora gráfica, Excel ou Python!
-
+Solução analítica: Este cálculo, por se tratar de uma equação de estado cúbica, convém ser solucionado por meio de uma calculadora gráfica, Excel ou Python
+       
         import numpy as np
         from scipy.optimize import fsolve
         
@@ -180,4 +181,24 @@ Este cálculo, por se tratar de  uma equação de estado cúbida convém ser sol
 Fazendo uma nova pesquisa por bibliotecas, é possível encontrar a biblioteca [CoolProp](https://github.com/CoolProp/CoolProp) desenvoldida em C++. Em seu repositório é disponibilizado toda sua [documentação](http://coolprop.org/), onde é possível encontrar diversas dicas de como utilizar 
 
 
+Veja que com a utilização desta biblioteca, utilizamos apenas três linhas de código para encontrar a temperatura do propano a 1 atm ou 101325 Pa
 
+        import CoolProp.CoolProp as CP
+        Temperatura = CP.PropsSI("T","P",101325,"Q",0,"SRK::Propane")
+        print (Temperatura)
+        
+* D": Especifica que estamos interessados na densidade.
+* "P": Especifica que a primeira entrada é a pressão.
+* 101325: Valor da pressão em Pascal (1 atm).
+* "Q": Especifica que a segunda entrada é a qualidade do vapor.
+* 0: Qualidade do vapor (0 significa líquido saturado).
+* "SRK::Propane": Especifica o fluido (Propane) e o modelo de estado (Soave-Redlich-Kwong equation of state - SRK).
+
+#### E para calcular o volume? 
+
+Por definição, O volume é dado por 1/Densidade, então basta substituir T por D para calcular a densiidade na pressão dada
+
+        import CoolProp.CoolProp as CP
+        densidade = CP.PropsSI("D","P",101325,"Q",0,"SRK::Propane")
+        volume = 1 / densidade
+        print (volume)
